@@ -35,7 +35,7 @@ namespace GameTimeTracker
 
         private void OnTimerElapsed(object? sender, EventArgs e)
         {
-            CurrentTime += new TimeSpan(0, 1, 0);
+            CurrentTime += new TimeSpan(0, 0, 1);
             if (TimerElapsed != null) 
                 TimerElapsed(this, new TimeUpdatedEventArgs(CurrentTime));
 

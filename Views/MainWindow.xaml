@@ -44,7 +44,7 @@
             Grid.Row="2"
             Margin="50"
             Content="Select Folders"
-            FontSize="50"
+            FontSize="35"
             Click="SelectFoldersButton_Click"/>
         <Button
             Name="StartButton"
@@ -52,7 +52,7 @@
             Grid.Row="3"
             Margin="50"
             Content="Start"
-            FontSize="50"
+            FontSize="35"
             Click="OnStart" />
         <Button
             Name="StopButton"
@@ -60,7 +60,7 @@
             Grid.Row="3"
             Margin="50"
             Content="Stop"
-            FontSize="50"
+            FontSize="35"
             Click="OnStop" />
     </Grid>
 </Window>
