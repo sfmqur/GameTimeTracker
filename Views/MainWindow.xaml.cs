@@ -43,6 +43,7 @@ namespace GameTimeTracker
             _timerHandler.StopTimer();
             if (_lastSelectedGame != null)
                 _lastSelectedGame.PlayTime = _timerHandler.CurrentTime; //saves time to object
+            _jsonHandler.SaveData();
         }
 
         private void SelectFoldersButton_Click(object sender, RoutedEventArgs e)
