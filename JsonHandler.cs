@@ -54,7 +54,7 @@ namespace GameTimeTracker
         {
             var zeroTime = new TimeSpan(0);
             var gamelist = JsonData.GamesList; 
-            var gamesToRemove = gamelist.Where(game => game.PlayTime == zeroTime).ToList();
+            var gamesToRemove = gamelist.Where(game => game.IsVisible == false && game.PlayTime == zeroTime).ToList();
 
             foreach (var game in gamesToRemove)
             {
