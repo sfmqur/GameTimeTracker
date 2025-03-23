@@ -38,6 +38,7 @@ namespace GameTimeTracker
 
         public void SaveData()
         {
+            CleanGameList();
             if (!Directory.Exists(myDocsPath + "\\" + dataFolder))
             {
                 Directory.CreateDirectory(myDocsPath+"\\"+dataFolder);
@@ -46,6 +47,18 @@ namespace GameTimeTracker
             {
                 var jsonOut = JsonConvert.SerializeObject(JsonData, Formatting.Indented);
                 fs.Write(jsonOut);
+            }
+        }
+
+        private void CleanGameList()
+        {
+            var zeroTime = new TimeSpan(0);
+            var gamelist = JsonData.GamesList; 
+            var gamesToRemove = gamelist.Where(game => game.PlayTime == zeroTime).ToList();
+
+            foreach (var game in gamesToRemove)
+            {
+                gamelist.Remove(game);
             }
         }
     }
